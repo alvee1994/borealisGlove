@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(mastering_ros_robot_description_pkg)
+project(borealisGlove)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -84,7 +84,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES mastering_ros_robot_description_pkg
+#  LIBRARIES borealisGlove
 #  CATKIN_DEPENDS geometry_msgs roscpp rviz tf urdf xacro
 #  DEPENDS system_lib
 )
@@ -101,19 +101,19 @@ include_directories(
 )
 
 ## Declare a cpp library
-# add_library(mastering_ros_robot_description_pkg
-#   src/${PROJECT_NAME}/mastering_ros_robot_description_pkg.cpp
+# add_library(borealisGlove
+#   src/${PROJECT_NAME}/borealisGlove.cpp
 # )
 
 ## Declare a cpp executable
-# add_executable(mastering_ros_robot_description_pkg_node src/mastering_ros_robot_description_pkg_node.cpp)
+# add_executable(borealisGlove_node src/borealisGlove_node.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
-# add_dependencies(mastering_ros_robot_description_pkg_node mastering_ros_robot_description_pkg_generate_messages_cpp)
+# add_dependencies(borealisGlove_node borealisGlove_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(mastering_ros_robot_description_pkg_node
+# target_link_libraries(borealisGlove_node
 #   ${catkin_LIBRARIES}
 # )
 
@@ -132,7 +132,7 @@ include_directories(
 # )
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS mastering_ros_robot_description_pkg mastering_ros_robot_description_pkg_node
+# install(TARGETS borealisGlove borealisGlove_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -157,7 +157,7 @@ include_directories(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_mastering_ros_robot_description_pkg.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_borealisGlove.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
