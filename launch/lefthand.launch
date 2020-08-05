@@ -1,0 +1,24 @@
+<launch>
+	<arg name="gui" default="true"/>
+	<arg name="model" />
+
+
+<!--	&lt;!&ndash; start vectornav &ndash;&gt;-->
+	<node name="vn200" pkg="vnav" type="vectornav.py" output="screen"/>
+	<node name="ss" pkg="stretchsense" type="stretchSenseNotif.py" output="screen"/>
+	<!-- Parsing xacro and setting robot_description parameter -->
+	<param name="robot_description" command="$(find xacro)/xacro --inorder $(find mastering_ros_robot_description_pkg)/urdf/lefthand_NED.xacro" />
+
+
+<!--	&lt;!&ndash; Setting gui parameter to true for display joint slider &ndash;&gt;-->
+<!--	<param name="use_gui" value="true"/>-->
+<!--	&lt;!&ndash; Starting Joint state publisher node which will publish the joint values &ndash;&gt;-->
+<!--	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />-->
+
+	<!-- Starting robot state publish which will publish tf -->
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
+	<!-- Launch visualization in rviz -->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find mastering_ros_robot_description_pkg)/urdf.rviz" required="true" />
+
+</launch>
